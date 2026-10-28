@@ -69,8 +69,7 @@ successful prompt-injection protection. Text fluency is not pronunciation eviden
 ## Submission still required
 
 The assignment requires a public/viewable GitHub repo or Google Colab link, plus
-the audit document/PDF. This package has not been published, sent to the recruiter,
-or live API-tested. HMW remains blocked as described in hmw_audit_status.md.
+the audit document/PDF.  HMW remains blocked as described in hmw_audit_status.md.
 
 ## Primary documentation
 
