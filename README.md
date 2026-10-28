@@ -56,15 +56,14 @@ same JD, compare factual claims, and retain request/model/version metadata.
 
 ## Deliverable 2 notes
 
-`system_prompt.txt` is the exact production prompt used by the script. It includes
-an evidence rubric, untrusted-input handling, no-preamble JSON, no cross-candidate
-reuse, Hindi/Hinglish support, empty/OCR/contradictory input guidance, and few-shot
-examples. API failure handling is intentionally implemented in application code;
-a system prompt cannot catch HTTP 429 or enforce request deadlines.
+All 12 offline tests passed. These tests validate parsing, schema enforcement, and error handling using simulated API responses; they do not establish live model quality.
 
-Audit findings motivated explicit evidence grounding and no invented metrics.
-Do not characterize identical demo outputs as proof of a static backend or
-successful prompt-injection protection. Text fluency is not pronunciation evidence.
+Live Gemini requests were attempted, but no successful model output was obtained:
+- Gemini 3.8 Flash returned HTTP 503 with a high-demand message.
+- Gemini 3.1 Flash Lite returned HTTP 503.
+- Gemini 2.5 Flash returned HTTP 404 indicating that it is unavailable to new users.
+
+Successful end-to-end validation and live baseline/injection comparison remain pending.
 
 ## Submission still required
 
