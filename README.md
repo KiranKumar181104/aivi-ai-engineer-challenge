@@ -48,7 +48,7 @@ rate limits, timeouts, blocked responses, or invalid output.
 ## Validation status
 
 Offline transport/schema tests exercise real parser and application code using
-synthetic API envelopes; they do not establish live model quality. No live Gemini
+synthetic API envelopes; they do not establish live model quality.All 12 offline tests passed. Live Gemini requests were attempted, but no successful model output was obtained. Gemini 3.8 Flash returned HTTP 503 with a high-demand message; Gemini 3.1 Flash Lite also returned HTTP 503. Gemini 2.5 Flash returned HTTP 404 indicating that it is unavailable to new users. End-to-end validation remains pending.
 request was run because GEMINI_API_KEY was not configured. A successful live smoke
 test plus an adversarial/grounding evaluation is required before claiming the
 script is validated end-to-end. Test the baseline and injected resume with the
