@@ -1,0 +1,39 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "match_score": {
+      "maximum": 100,
+      "minimum": 0,
+      "title": "Match Score",
+      "type": "integer"
+    },
+    "top_strengths": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 5,
+      "title": "Top Strengths",
+      "type": "array"
+    },
+    "missing_skills": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 10,
+      "title": "Missing Skills",
+      "type": "array"
+    },
+    "summary": {
+      "title": "Summary",
+      "type": "string"
+    }
+  },
+  "required": [
+    "match_score",
+    "top_strengths",
+    "missing_skills",
+    "summary"
+  ],
+  "title": "MatchResult",
+  "type": "object"
+}
