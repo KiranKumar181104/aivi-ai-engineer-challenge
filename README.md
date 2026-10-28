@@ -47,24 +47,21 @@ rate limits, timeouts, blocked responses, or invalid output.
 
 ## Validation status
 
-Offline transport/schema tests exercise real parser and application code using
-synthetic API envelopes; they do not establish live model quality.All 12 offline tests passed. Live Gemini requests were attempted, but no successful model output was obtained. Gemini 3.8 Flash returned HTTP 503 with a high-demand message; Gemini 3.1 Flash Lite also returned HTTP 503. Gemini 2.5 Flash returned HTTP 404 indicating that it is unavailable to new users. End-to-end validation remains pending.
-request was run because GEMINI_API_KEY was not configured. A successful live smoke
-test plus an adversarial/grounding evaluation is required before claiming the
-script is validated end-to-end. Test the baseline and injected resume with the
-same JD, compare factual claims, and retain request/model/version metadata.
-
-## Deliverable 2 notes
-
 All 12 offline tests passed. These tests validate parsing, schema enforcement, and error handling using simulated API responses; they do not establish live model quality.
 
 Live Gemini requests were attempted, but no successful model output was obtained:
+
 - Gemini 3.8 Flash returned HTTP 503 with a high-demand message.
 - Gemini 3.1 Flash Lite returned HTTP 503.
 - Gemini 2.5 Flash returned HTTP 404 indicating that it is unavailable to new users.
 
 Successful end-to-end validation and live baseline/injection comparison remain pending.
 
+## Deliverable 2 notes
+
+system_prompt.txt contains the system prompt used by the Python script. It includes an evidence-based scoring rubric, untrusted-input handling, strict JSON output instructions, Hindi/Hinglish support, and few-shot examples.
+
+Pydantic schema validation, retries, rate-limit handling, and timeouts are implemented in Python. Prompt instructions alone do not guarantee factual accuracy or injection resistance.
 ## Submission still required
 
 The assignment requires a public/viewable GitHub repo or Google Colab link, plus
