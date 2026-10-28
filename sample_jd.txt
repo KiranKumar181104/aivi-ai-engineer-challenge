@@ -1,0 +1,4 @@
+Junior Python Backend Developer
+Required: Python, Django, MySQL and REST APIs.
+Demonstrate a backend web application project and explain its database integration.
+Preferred: automated backend tests and Git version control.

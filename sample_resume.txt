@@ -1,0 +1,5 @@
+Sample Candidate
+Built a food ordering application using Python, Django and MySQL.
+Implemented menu pages and an admin dashboard using HTML, CSS and JavaScript.
+Connected Django views and templates with database-backed content.
+Converted a React web application to Android using Capacitor.
