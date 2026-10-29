@@ -47,25 +47,30 @@ rate limits, timeouts, blocked responses, or invalid output.
 
 ## Validation status
 
-All 12 offline tests passed. These tests validate parsing, schema enforcement, and error handling using simulated API responses; they do not establish live model quality.
-
-Live Gemini requests were attempted, but no successful model output was obtained:
-
-- Gemini 3.8 Flash returned HTTP 503 with a high-demand message.
-- Gemini 3.1 Flash Lite returned HTTP 503.
-- Gemini 2.5 Flash returned HTTP 404 indicating that it is unavailable to new users.
-
-Successful end-to-end validation and live baseline/injection comparison remain pending.
+Offline transport/schema tests exercise real parser and application code using
+synthetic API envelopes; they do not establish live model quality. No live Gemini
+request was run because GEMINI_API_KEY was not configured. A successful live smoke
+test plus an adversarial/grounding evaluation is required before claiming the
+script is validated end-to-end. Test the baseline and injected resume with the
+same JD, compare factual claims, and retain request/model/version metadata.
 
 ## Deliverable 2 notes
 
-system_prompt.txt contains the system prompt used by the Python script. It includes an evidence-based scoring rubric, untrusted-input handling, strict JSON output instructions, Hindi/Hinglish support, and few-shot examples.
+`system_prompt.txt` is the exact production prompt used by the script. It includes
+an evidence rubric, untrusted-input handling, no-preamble JSON, no cross-candidate
+reuse, Hindi/Hinglish support, empty/OCR/contradictory input guidance, and few-shot
+examples. API failure handling is intentionally implemented in application code;
+a system prompt cannot catch HTTP 429 or enforce request deadlines.
 
-Pydantic schema validation, retries, rate-limit handling, and timeouts are implemented in Python. Prompt instructions alone do not guarantee factual accuracy or injection resistance.
+Audit findings motivated explicit evidence grounding and no invented metrics.
+Do not characterize identical demo outputs as proof of a static backend or
+successful prompt-injection protection. Text fluency is not pronunciation evidence.
+
 ## Submission still required
 
 The assignment requires a public/viewable GitHub repo or Google Colab link, plus
-the audit document/PDF.  HMW remains blocked as described in hmw_audit_status.md.
+the audit document/PDF. This package has not been published, sent to the recruiter,
+or live API-tested. HMW remains blocked as described in hmw_audit_status.md.
 
 ## Primary documentation
 
